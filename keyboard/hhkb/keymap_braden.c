@@ -24,10 +24,10 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      */
     [0] = \
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, \
-           TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
+           FN4, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
            LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN, QUOT,FN6, \
            FN7, Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH, RSFT,FN1, \
-                LALT,LGUI,          FN4,                RGUI, RALT),
+                LALT,LGUI,          SPC,                RGUI, RALT),
 
     /* Layer 1: Vi mode[Slash]
      * ,-----------------------------------------------------------.
@@ -44,9 +44,9 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      */
     [1] = \
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           TAB, HOME,PGDN,UP,  PGUP,END, HOME,PGDN,PGUP,END, NO,  NO,  NO,  BSPC, \
-           LCTL,NO,  LEFT,DOWN,RGHT,NO,  LEFT,DOWN,UP,  RGHT,NO,  NO,  ENT, \
-           LSFT,NO,  NO,  NO,  NO,  NO,  HOME,PGDN,PGUP,END, FN2, RSFT,TRNS, \
+           TRNS, HOME,PGDN,UP,  PGUP,END, HOME,PGDN,PGUP,END, NO,  NO,  NO,  BSPC, \
+           TRNS,NO,  LEFT,DOWN,RGHT,NO,  LEFT,DOWN,UP,  RGHT,NO,  NO,  ENT, \
+           TRNS,NO,  NO,  NO,  NO,  NO,  HOME,PGDN,PGUP,END, FN2, RSFT,TRNS, \
                 TRNS,TRNS,          SPC,                TRNS,TRNS),
 
 };
@@ -76,7 +76,7 @@ const uint16_t fn_actions[] PROGMEM = {
     [1] = ACTION_LAYER_TOGGLE(1),                 // HHKB layer(toggle with 5 taps)
     [2] = ACTION_LAYER_TAP_KEY(1, KC_SLASH),          // Vi layer with Slash*
     [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon*
-    [4] = ACTION_LAYER_TAP_KEY(1, KC_SPC),            // Mousekey layer with Space
+    [4] = ACTION_LAYER_TAP_KEY(1, KC_TAB),            // Mousekey layer with Space
     [5] = ACTION_LAYER_MOMENTARY(4),                  // Mousekey layer(IJKL)
     [6] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),      // RControl with tap Enter
     [7] = ACTION_MODS_ONESHOT(MOD_LSFT),              // Oneshot Shift
