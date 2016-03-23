@@ -12,14 +12,15 @@
 // The second converts the arguments into a two-dimensional array
 #define KEYMAP( \
     k00, k01, k02, \
-      k10,  k11,   \
+      k10,  k11   \
 ) \
 { \
     { k00, k01,   k02 }, \
     { k10, KC_NO, k11 }, \
 } 
 
-void * matrix_init_user(void);
-void * matrix_scan_user(void);
+void matrix_init_user(void);
+void matrix_scan_user(void);
+void led_set_user(uint8_t usb_led);
 
 #endif
