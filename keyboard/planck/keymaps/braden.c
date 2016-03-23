@@ -25,10 +25,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     {KC_RSFT, CTL_T(KC_ESC), KC_LALT, KC_LGUI, KC_SPC, FUNC(1), FUNC(1), KC_SPC, KC_LGUI, KC_LALT, CTL_T(KC_ESC), KC_RSFT}
     },
   [MDIA] = { /* Utils */
-    {FUNC(3),   KC_1,      KC_2,    KC_3,    KC_4,       KC_5,    KC_6,    KC_7,      KC_8,       KC_9,       KC_0,      FUNC(4)},
-    {KC_GRV,    S(KC_GRV), S(KC_9), S(KC_0), S(KC_MINS), KC_MINS, KC_EQL,  S(KC_EQL), S(KC_LBRC), S(KC_RBRC), KC_LBRC,   KC_RBRC},
-    {S(KC_GRV), S(KC_1),   S(KC_2), S(KC_3), S(KC_4),    S(KC_5), S(KC_6), S(KC_7),   S(KC_8),    S(KC_COMM), S(KC_DOT), KC_BSLS},
-    {SFT_T(KC_LEFT), CTL_T(KC_UP), ALT_T(KC_DOWN), GUI_T(KC_RIGHT), KC_PIPE, KC_TRNS, KC_TRNS, KC_PIPE, GUI_T(KC_LEFT), ALT_T(KC_DOWN), CTL_T(KC_UP), SFT_T(KC_RIGHT)}
+    {KC_1,   KC_2,   KC_3,    KC_4,    KC_5,   FUNC(3), FUNC(4),  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC},
+    {KC_6,   KC_7,   KC_8,    KC_9,    KC_0,   KC_TRNS, KC_TRNS,  KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN},
+    {KC_ESC, KC_EQL, KC_MINS, KC_PIPE, KC_GRV, KC_TRNS, KC_TRNS,  KC_TILD, KC_PIPE, KC_BSLS, KC_LBRC, KC_RBRC},
+    {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, GUI_T(KC_LEFT), ALT_T(KC_DOWN), CTL_T(KC_UP), SFT_T(KC_RIGHT)}
     },
 };
 
