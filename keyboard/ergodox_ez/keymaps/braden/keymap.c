@@ -16,7 +16,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_F9,        KC_F10, KC_F11, KC_F12, KC_VOLU,
                                       KC_LGUI, KC_LALT,
                                                KC_LCTL,
-                              KC_SPC, KC_ENT, TG(2),
+                                 KC_SPC, KC_ENT, TG(2),
         // right hand
              KC_GRV, KC_6,   KC_7,   KC_8,   KC_9,   KC_0,    KC_EQL,
              KC_QUOT,KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,    KC_BSPC,
@@ -94,12 +94,12 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 };
 
 // Runs just one time when the keyboard initializes.
-void * matrix_init_user(void) {
+void matrix_init_user(void) {
 
 };
 
 // Runs constantly in the background, in a loop.
-void * matrix_scan_user(void) {
+void matrix_scan_user(void) {
 
     uint8_t layer = biton32(layer_state);
 
