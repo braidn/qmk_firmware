@@ -1,30 +1,19 @@
-#include "planck.h"
-
-#define QWRT 0
-/* #define WORK 1 */
-#define NORM 1
-#define MDIA 2
+#include "keymap_common.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [QWRT] = { /* Qwerty */
+  [0] = { /* Qwerty */
     {KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,   KC_ESC,  KC_BSPC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P},
     {KC_A,    KC_S,    KC_D,    KC_F,    KC_G,   KC_TAB,  KC_QUOT, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN},
     {KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_ENT,  KC_ENT,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH},
-    {KC_RSFT, CTL_T(KC_ESC), KC_LALT, KC_LGUI, KC_SPC, FUNC(1), FUNC(1), KC_SPC, KC_LGUI, KC_LALT, CTL_T(KC_ESC), KC_RSFT}
+    {KC_RSFT, KC_LCTL, KC_LALT, KC_LGUI, KC_SPC, FUNC(1), FUNC(1), KC_SPC, KC_RGUI, KC_RALT,  KC_RCTL, KC_RSFT}
   },
-  /* [WORK] = { /1* Workman P *1/ */
-  /*   {KC_Q,    KC_D,    KC_R,    KC_W,    KC_B,   KC_ESC,  KC_BSPC, KC_J,    KC_F,    KC_U,    KC_P,    KC_SCLN}, */
-  /*   {KC_A,    KC_S,    KC_H,    KC_T,    KC_G,   KC_TAB,  KC_QUOT, KC_Y,    KC_N,    KC_E,    KC_O,    KC_I}, */
-  /*   {KC_Z,    KC_X,    KC_M,    KC_C,    KC_V,   KC_ENT,  KC_ENT,  KC_K,    KC_L,    KC_COMM, KC_DOT,  KC_SLSH}, */
-  /*   {KC_RSFT, CTL_T(KC_ESC), KC_LALT, KC_LGUI, KC_SPC, FUNC(6), FUNC(6), KC_SPC, KC_LGUI, KC_LALT, CTL_T(KC_ESC), KC_RSFT} */
-  /*   }, */
-  [NORM] = { /* Norman */
+  [1] = { /* Norman */
     {KC_Q,    KC_W,    KC_D,    KC_F,    KC_K,   KC_ESC,  KC_BSPC, KC_J,    KC_U,    KC_R,    KC_L,    KC_SCLN},
     {KC_A,    KC_S,    KC_E,    KC_T,    KC_G,   KC_TAB,  KC_QUOT, KC_Y,    KC_N,    KC_I,    KC_O,    KC_H},
     {KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_ENT,  KC_ENT,  KC_P,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH},
     {KC_RSFT, CTL_T(KC_ESC), KC_LALT, KC_LGUI, KC_SPC, FUNC(1), FUNC(1), KC_SPC, KC_LGUI, KC_LALT, CTL_T(KC_ESC), KC_RSFT}
     },
-  [MDIA] = { /* Utils */
+  [2] = { /* Utils */
     {KC_1,   KC_2,   KC_3,    KC_4,    KC_5,   FUNC(3), FUNC(4),  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC},
     {KC_6,   KC_7,   KC_8,    KC_9,    KC_0,   KC_TRNS, KC_TRNS,  KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN},
     {KC_ESC, KC_EQL, KC_MINS, KC_PIPE, KC_GRV, KC_TRNS, KC_TRNS,  KC_TILD, KC_PIPE, KC_BSLS, KC_LBRC, KC_RBRC},
