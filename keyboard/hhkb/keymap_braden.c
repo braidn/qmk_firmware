@@ -1,54 +1,31 @@
-/* 
- * Hasu: my personal keymap
- */
 #include "keymap_common.h"
-
 
 #ifdef KEYMAP_SECTION_ENABLE
 const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] __attribute__ ((section (".keymap.keymaps"))) = {
 #else
 const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 #endif
-    /* Layer 0: Default Layer
-     * ,-----------------------------------------------------------.
-     * |Esc|  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|  `|
-     * |-----------------------------------------------------------|
-     * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|
-     * |-----------------------------------------------------------|
-     * |Contro|  A|  S|  D|  F|  G|  H|  J|  K|  L|Fn3|  '|Fn6     |
-     * |-----------------------------------------------------------|
-     * |Fn7     |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|Fn2|Shift |Fn1|
-     * `-----------------------------------------------------------'
-     *       |Gui|Alt  |         Fn4           |Fn5  |Gui|
-     *       `-------------------------------------------'
-     */
+    /* default layer */
     [0] = \
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, \
            FN4, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
            LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN, QUOT,FN6, \
-           FN7, Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH, RSFT,FN1, \
-                LALT,LGUI,          SPC,                RGUI, RALT),
-
-    /* Layer 1: Vi mode[Slash]
-     * ,-----------------------------------------------------------.
-     * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
-     * |-----------------------------------------------------------|
-     * |Tab  |Hom|PgD|Up |PgU|End|Hom|PgD|PgUlEnd|   |   |   |Backs|
-     * |-----------------------------------------------------------|
-     * |Contro|   |Lef|Dow|Rig|   |Lef|Dow|Up |Rig|   |   |Return  |
-     * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |   |Hom|PgD|PgUlEnd|Fn0|Shift |   |
-     * `-----------------------------------------------------------'
-     *       |Gui|Alt  |          Space        |Alt  |Gui|
-     *       `-------------------------------------------'
-     */
+           FN12, Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH, RSFT,FN1, \
+                LALT,LGUI,          SPC,                RGUI, FN11),
+    /* alt fn layer */
     [1] = \
-    KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           TRNS, HOME,PGDN,UP,  PGUP,END, HOME,PGDN,PGUP,END, NO,  NO,  NO,  BSPC, \
-           TRNS,NO,  LEFT,DOWN,RGHT,NO,  LEFT,DOWN,UP,  RGHT,NO,  NO,  ENT, \
-           TRNS,NO,  NO,  NO,  NO,  NO,  HOME,PGDN,PGUP,END, FN2, RSFT,TRNS, \
+    KEYMAP(GRV, FN0, FN2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
+           TRNS,  1,  2,    3,   4,   5,   6,   7,   8,   9,   0,  MINS,  EQL,  BSLS, \
+           ESC, VOLU, VOLD,  NO, PGDN,  NO,  LEFT,DOWN,UP,  RGHT,NO,  BSLS,  ENT, \
+           TRNS, NO, NO,  NO,  NO,  PGUP,  HOME,PGDN,PGUP,END, NO, RSFT,TRNS, \
                 TRNS,TRNS,          SPC,                TRNS,TRNS),
-
+    /* norman layer */
+    [2] = \
+    KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, \
+           FN4, Q,   W,   D,   F,   K,   J,   U,   R,   L,   SCLN,   LBRC,RBRC,BSPC, \
+           LCTL,A,   S,   E,   T,   G,   Y,   N,   I,   O,   H, QUOT,FN6, \
+           FN12, Z,   X,   C,   V,   B,   P,   M,   COMM,DOT, SLSH, RSFT,FN1, \
+                LALT,LGUI,          SPC,                RGUI, FN11),
 };
 
 
@@ -74,7 +51,7 @@ const uint16_t fn_actions[] PROGMEM = {
 #endif
     [0] = ACTION_DEFAULT_LAYER_SET(0),                // Default layer(not used)
     [1] = ACTION_LAYER_TOGGLE(1),                 // HHKB layer(toggle with 5 taps)
-    [2] = ACTION_LAYER_TAP_KEY(1, KC_SLASH),          // Vi layer with Slash*
+    [2] = ACTION_DEFAULT_LAYER_SET(2),          // Vi layer with Slash*
     [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon*
     [4] = ACTION_LAYER_TAP_KEY(1, KC_TAB),            // Mousekey layer with Space
     [5] = ACTION_LAYER_MOMENTARY(4),                  // Mousekey layer(IJKL)
@@ -83,6 +60,8 @@ const uint16_t fn_actions[] PROGMEM = {
     [8] = ACTION_MACRO(ALT_TAB),                      // Application switching
     [9] = ACTION_MODS_KEY(MOD_LALT, KC_LEFT),
    [10] = ACTION_MODS_KEY(MOD_LALT, KC_RIGHT),
+   [11] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_GRV),      // Tilde/Grave with tap LAlt
+   [12] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_ENT),      // Enter/Return with tap LShift
 
 //  [x] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_BSPC),        // LControl with tap Backspace
 //  [x] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_ESC),         // LControl with tap Esc
