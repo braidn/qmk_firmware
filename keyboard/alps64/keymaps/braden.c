@@ -7,7 +7,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FN5, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
         LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,ENT,  \
         LSFT,FN3,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,RSFT,FN0, \
-        FN0,LALT,LGUI,          SPC,                     RGUI, RALT,FN1,FN0),
+        CAPS,LALT,LGUI,          SPC,                     RGUI, RALT,FN1,FN0),
   /* Vim Movement */
   [1] = KEYMAP( \ 
         TRNS, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10,  F11,F12, TRNS, FN4, \
