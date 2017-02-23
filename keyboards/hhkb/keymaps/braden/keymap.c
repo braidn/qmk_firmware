@@ -8,19 +8,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = \
     KEYMAP(KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS,KC_GRV, \
            KC_FN4, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSPC, \
-           KC_LCTL,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN, KC_QUOT,KC_FN6, \
+           KC_FN13,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN, KC_QUOT,KC_FN6, \
            KC_FN12,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH, KC_RSFT,KC_FN1, \
-                KC_LALT,KC_LGUI,          KC_SPC,                KC_RGUI, KC_FN11),
+                KC_LALT,   KC_FN6,          KC_SPC,                KC_RGUI, KC_FN11),
     [ALT] = \
-    KEYMAP(KC_GRV, KC_FN0, KC_FN2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS, KC_DEL, \
-           KC_TRNS,KC_1,   KC_2,    KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,  KC_MINS,  KC_EQL,  KC_BSLS, \
-           KC_ESC, KC_VOLU,KC_VOLD, KC_NO,  KC_PGDN,KC_NO,  KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,KC_NO,  KC_BSLS,  KC_ENT, \
+    KEYMAP(KC_GRV,  KC_FN0, KC_FN2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_FN0, KC_FN2, \
+           KC_TRNS, KC_1,   KC_2,    KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,  KC_MINS,  KC_EQL,  KC_BSLS, \
+           KC_TRNS, KC_VOLD,KC_VOLU, KC_NO,  KC_PGDN,KC_NO,  KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,KC_NO,  KC_BSLS,  KC_ENT, \
            KC_TRNS, KC_NO, KC_NO,  KC_NO,  KC_NO,  KC_PGUP,  KC_HOME,KC_PGDN,KC_PGUP,KC_END, KC_NO, KC_RSFT,KC_TRNS, \
                 KC_TRNS,KC_TRNS,          KC_SPC,                KC_TRNS,KC_TRNS),
     [NORM] = \
     KEYMAP(KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS,KC_GRV, \
            KC_FN4, KC_Q,   KC_W,   KC_D,   KC_F,   KC_K,   KC_J,   KC_U,   KC_R,   KC_L,   KC_SCLN,   KC_LBRC,KC_RBRC,KC_BSPC, \
-           KC_LCTL,KC_A,   KC_S,   KC_E,   KC_T,   KC_G,   KC_Y,   KC_N,   KC_I,   KC_O,   KC_H, KC_QUOT,KC_FN6, \
+           KC_FN13,KC_A,   KC_S,   KC_E,   KC_T,   KC_G,   KC_Y,   KC_N,   KC_I,   KC_O,   KC_H, KC_QUOT,KC_FN6, \
            KC_FN12,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_P,   KC_M,   KC_COMM,KC_DOT, KC_SLSH, KC_RSFT,KC_FN1, \
                 KC_LALT,KC_LGUI,          KC_SPC,                KC_RGUI, KC_FN11),
 };
@@ -35,12 +35,13 @@ const uint16_t PROGMEM fn_actions[] = {
     [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon*
     [4] = ACTION_LAYER_TAP_KEY(1, KC_TAB),            // Mousekey layer with Space
     [5] = ACTION_LAYER_MOMENTARY(4),                  // Mousekey layer(IJKL)
-    [6] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),      // RControl with tap Enter
+    [6] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_ENT),      // RControl with tap Enter
     [7] = ACTION_MODS_ONESHOT(MOD_LSFT),              // Oneshot Shift
     [9] = ACTION_MODS_KEY(MOD_LALT, KC_LEFT),
    [10] = ACTION_MODS_KEY(MOD_LALT, KC_RIGHT),
    [11] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_GRV),      // Tilde/Grave with tap LAlt
    [12] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_BSPC),      // Backspace with tap LShift
+   [13] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),      // Tap Esc or Ctrl
 
 //  [x] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_BSPC),        // LControl with tap Backspace
 //  [x] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_ESC),         // LControl with tap Esc
