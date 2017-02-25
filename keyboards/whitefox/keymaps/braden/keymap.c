@@ -14,9 +14,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#include "keymap_common.h"
+#include "whitefox.h"
 
-const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Layer 0: Default Layer
      * ,---------------------------------------------------------------.
      * |Esc|  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|  `|Ins|
@@ -60,6 +60,6 @@ const uint16_t fn_actions[] = {
   [4] = ACTION_DEFAULT_LAYER_SET(2),
   [5] = ACTION_LAYER_TAP_KEY(1, KC_TAB),
   [6] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_BSPC),      // Backspace with tap LShift
-  [7] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC)
+  [7] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),
   [8] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_ENT)    // Enter with tap left GUI
 };
