@@ -11,7 +11,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = KEYMAP(  // Layer0: default, leftled:none
         // left hand
         KC_MINS,      KC_1,   KC_2,   KC_3,   KC_4,   KC_5,  KC_GRV,
-        KC_TAB,       KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,  KC_BSLS,
+        KC_FN5,       KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,  KC_BSLS,
         KC_FN3,       KC_A,   KC_S,   KC_D,   KC_F,   KC_G,
         KC_LSPO,      KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,  KC_LBRC,
         KC_F9,        KC_F10, KC_F11, KC_F12, KC_VOLU,
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
              KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
              KC_TRNS, KC_NLCK, KC_P7,   KC_P8,   KC_P9,   KC_PMNS, KC_PGUP,
-                      KC_PAST, KC_P4,   KC_P5,   KC_P6,   KC_PPLS, KC_PGDN,
+                      KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_TRNS, KC_PGDN,
              KC_TRNS, KC_FN17, KC_P1,   KC_P2,   KC_P3,   KC_PSLS, KC_PENT,
                        KC_P0, KC_PDOT, KC_SLSH, KC_NO, KC_NO,
         KC_TRNS,KC_TRNS,
@@ -78,7 +78,8 @@ const uint16_t PROGMEM fn_actions[] = {
     [1] = ACTION_LAYER_TAP_TOGGLE(MDIA),                // FN1 - Momentary Layer 1 (Symbols)
     [2] = ACTION_LAYER_TAP_TOGGLE(WORK),                // FN1 - Momentary Layer 1 (Symbols)
     [3] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),        // Tap Esc or Ctrl
-    [4] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_GRV)   // Grave with tap right alt
+    [4] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_GRV),        // Grave with tap right alt
+    [5] = ACTION_LAYER_TAP_KEY(2, KC_TAB)               // FN/Mouse Layer layer with Tab
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
