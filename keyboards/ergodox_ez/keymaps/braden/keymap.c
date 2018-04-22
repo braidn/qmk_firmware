@@ -4,8 +4,8 @@
 #include "version.h"
 
 #define BASE 0 // default layer
-#define WORK 1 // workman layout
-#define MDIA 2 // media keys
+#define MDIA 1 // media keys
+#define WORK 2 // workman layout
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = KEYMAP(  // Layer0: default, leftled:none
@@ -14,19 +14,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_FN5,       KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,  KC_BSLS,
         KC_FN3,       KC_A,   KC_S,   KC_D,   KC_F,   KC_G,
         KC_LSPO,      KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,  KC_LBRC,
-        KC_F9,        KC_F10, KC_F11, KC_F12, KC_VOLU,
-                                      KC_LGUI, KC_FN4,
-                                               KC_LCTL,
-                                 KC_SPC, KC_ENT, TG(2),
+        KC_VOLU,      KC_LCTL,KC_LALT,KC_LGUI,KC_LPRN,
+                                      KC_LGUI, KC_LALT, // Top 2 1u thumb cluster
+                                               KC_LCTL, // Single 1u thumb cluster
+                                 KC_FN6, KC_ENT, TG(2), // Enter/Space/Lower 1u thumb cluster
         // right hand
              KC_ESC, KC_6,   KC_7,   KC_8,   KC_9,   KC_0,    KC_EQL,
              KC_QUOT,KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,    KC_BSPC,
                      KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN, KC_ENT,
              KC_RBRC,KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH, KC_RSPC,
-                       KC_VOLD,KC_LEFT,KC_DOWN,  KC_UP, KC_RGHT,
-        KC_FN4, KC_RGUI,
-        KC_RCTL,
-        TG(1), KC_BSPC, KC_SPC
+                       KC_RPRN,KC_RGUI,KC_RALT,  KC_RCTL, KC_VOLD,
+        KC_FN4, KC_RGUI, // Top 2 1u thumb cluster
+        KC_RCTL, // Single 1u thumb cluster
+        TG(1), KC_BSPC, KC_FN6 // Enter/Space/Lower 1u thumb cluster
+    ),
+
+[MDIA] = KEYMAP(  // Layer2: numpad, leftled:blue
+        // left hand
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_MINS, KC_7, KC_8, KC_9, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_EQL,  KC_4, KC_5, KC_6, KC_TRNS,
+        KC_TRNS, KC_0,    KC_1, KC_2, KC_3, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                                      KC_TRNS,  KC_TRNS,
+                                                KC_TRNS,
+                              KC_TRNS, KC_TRNS, KC_TRNS,
+        // right hand
+             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+             KC_TRNS, KC_NLCK, KC_P7,   KC_P8,   KC_P9,   KC_PMNS, KC_PGUP,
+                      KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_TRNS, KC_PGDN,
+             KC_TRNS, KC_FN17, KC_P1,   KC_P2,   KC_P3,   KC_PSLS, KC_PENT,
+                       KC_P0, KC_PDOT, KC_SLSH, KC_NO, KC_NO,
+        KC_TRNS,KC_TRNS,
+        KC_TRNS,
+        KC_TRNS,KC_BTN1,KC_BTN2
     ),
 
 [WORK] = KEYMAP(  // Layer1: Workman layout, leftled:all
@@ -50,28 +71,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,KC_TRNS,KC_TRNS
     ),
 
-[MDIA] = KEYMAP(  // Layer2: numpad, leftled:blue
-        // left hand
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_BTN1, KC_MS_U, KC_BTN2, KC_NO,   KC_NO,   KC_TRNS,
-        KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS, KC_NO,
-        KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_NO,   KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                                      KC_TRNS,  KC_TRNS,
-                                                KC_TRNS,
-                              KC_TRNS, KC_TRNS, KC_TRNS,
-        // right hand
-             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-             KC_TRNS, KC_NLCK, KC_P7,   KC_P8,   KC_P9,   KC_PMNS, KC_PGUP,
-                      KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_TRNS, KC_PGDN,
-             KC_TRNS, KC_FN17, KC_P1,   KC_P2,   KC_P3,   KC_PSLS, KC_PENT,
-                       KC_P0, KC_PDOT, KC_SLSH, KC_NO, KC_NO,
-        KC_TRNS,KC_TRNS,
-        KC_TRNS,
-        KC_TRNS,KC_BTN1,KC_BTN2
-    ),
-
-
 };
 
 const uint16_t PROGMEM fn_actions[] = {
@@ -79,7 +78,8 @@ const uint16_t PROGMEM fn_actions[] = {
     [2] = ACTION_LAYER_TAP_TOGGLE(WORK),                // FN1 - Momentary Layer 1 (Symbols)
     [3] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),        // Tap Esc or Ctrl
     [4] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_GRV),        // Grave with tap right alt
-    [5] = ACTION_LAYER_TAP_KEY(2, KC_TAB)               // FN/Mouse Layer layer with Tab
+    [5] = ACTION_LAYER_TAP_KEY(1, KC_TAB),               // FN/Mouse Layer layer with Tab
+    [6] = ACTION_LAYER_TAP_KEY(1, KC_SPC)               // FN/Mouse Layer layer with Space
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
