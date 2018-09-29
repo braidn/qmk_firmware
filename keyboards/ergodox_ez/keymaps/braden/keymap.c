@@ -14,7 +14,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_FN5,       KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,  KC_BSLS,
         KC_FN3,       KC_A,   KC_S,   KC_D,   KC_F,   KC_G,
         KC_LSPO,      KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,  KC_LBRC,
-        KC_VOLU,      KC_LCTL,KC_LALT,KC_LGUI,KC_LPRN,
+        KC_VOLU,      KC_LCTL,KC_LALT,KC_LGUI,S(KC_LBRC),
                                       KC_LGUI, KC_LALT, // Top 2 1u thumb cluster
                                                KC_LCTL, // Single 1u thumb cluster
                                  KC_FN6, KC_ENT, TG(2), // Enter/Space/Lower 1u thumb cluster
@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              KC_QUOT,KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,    KC_BSPC,
                      KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN, KC_ENT,
              KC_RBRC,KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH, KC_RSPC,
-                       KC_RPRN,KC_RGUI,KC_RALT,  KC_RCTL, KC_VOLD,
+                       S(KC_RBRC),KC_RGUI,KC_RALT,  KC_RCTL, KC_VOLD,
         KC_FN4, KC_RGUI, // Top 2 1u thumb cluster
         KC_RCTL, // Single 1u thumb cluster
         TG(1), KC_BSPC, KC_FN6 // Enter/Space/Lower 1u thumb cluster

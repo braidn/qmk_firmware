@@ -21,9 +21,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 KC_TRNS,KC_TRNS,          KC_SPC,                KC_TRNS,KC_TRNS),
     [NUMB] = \
     KEYMAP(KC_GRV,  KC_FN0, KC_FN2,  KC_F3, KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_FN0, KC_FN2, \
-           KC_TRNS, KC_1,   KC_2,    KC_3,  S(KC_1),S(KC_2),S(KC_3),KC_7,   KC_8,   KC_9,   KC_0,  KC_BTN1,  KC_BTN2,  KC_BSLS, \
-           KC_TRNS, KC_4,   KC_5,    KC_6,  S(KC_4),S(KC_5),S(KC_6),KC_DOWN,KC_UP,  KC_RGHT,KC_NO,  KC_BSLS,  KC_ENT, \
-           KC_BSPC, KC_7,   KC_8,    KC_9,  S(KC_7),S(KC_8),S(KC_9),KC_PGDN,KC_PGUP,KC_END, KC_NO, KC_BSPC,KC_TRNS, \
+           KC_TRNS, KC_1,   KC_2,    KC_3,  S(KC_1),S(KC_2),S(KC_3),KC_MINS, S(KC_MINS),   KC_9,   KC_0,  KC_BTN1,  KC_BTN2,  KC_BSLS, \
+           KC_0,    KC_4,   KC_5,    KC_6,  S(KC_4),S(KC_5),S(KC_6),KC_EQL,  S(KC_EQL),  KC_RGHT,KC_NO,  KC_BSLS,  KC_ENT, \
+           KC_BSPC, KC_7,   KC_8,    KC_9,  S(KC_7),S(KC_8),S(KC_9),KC_BSLS, S(KC_BSLS),KC_END, KC_NO, KC_BSPC,KC_TRNS, \
                 KC_TRNS,KC_TRNS,          KC_SPC,                KC_TRNS,KC_TRNS),
     [NORM] = \
     KEYMAP(KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS,KC_GRV, \
