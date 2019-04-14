@@ -35,4 +35,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 >>>>>>> 4e5f921496faf29e5c7f61e388346f2181fab267
 };
-const uint16_t PROGMEM fn_actions[] = {};
