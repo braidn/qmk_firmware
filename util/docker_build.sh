@@ -40,16 +40,6 @@ fi
 if [ -z "$keyboard" ]; then
 	keyboard=all
 fi
-if [ -n "$target" ]; then
-	if [ "$(uname)" = "Linux" ] || docker-machine active >/dev/null 2>&1; then
-		usb_args="--privileged -v /dev:/dev"
-	else
-		errcho "Error: target requires docker-machine to work on your platform"
-		errcho "See http://gw.tnode.com/docker/docker-machine-with-usb-support-on-windows-macos"
-		errcho "Consider flashing with QMK Toolbox (https://github.com/qmk/qmk_toolbox) instead"
-		exit 3
-	fi
-fi
 dir=$(pwd -W 2>/dev/null) || dir=$PWD  # Use Windows path if on Windows
 
 # Run container and build firmware
